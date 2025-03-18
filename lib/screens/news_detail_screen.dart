@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   final Map<String, dynamic> news;
@@ -19,7 +20,9 @@ class NewsDetailScreen extends StatelessWidget {
             Text(news['body']),
             Spacer(),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Share.share(news['title'] + '\n' + news['body']);
+              },
               child: Text('Share'),
             ),
           ],
